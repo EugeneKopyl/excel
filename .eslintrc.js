@@ -19,5 +19,6 @@ module.exports = {
         'indent': ['error', 4],
         'max-len': ['error', {'code': 120}],
         'operator-linebreak': 'off',
+        'arrow-parens': 'off',
     }
 };
