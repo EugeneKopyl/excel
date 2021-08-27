@@ -87,9 +87,10 @@ export class Table extends ExcelComponent {
 
         if (keys.includes(key) && !event.shiftKey) {
             event.preventDefault()
+            const id = this.selection.current.id(true)
+            const $next = this.$root.find(nextSelector(key, id))
+            this.selectCell($next)
         }
-        const id = this.selection.current.id(true)
-        this.selectCell(this.$root.find(nextSelector(key, id)))
     }
 
     updateTextInStore(value) {
