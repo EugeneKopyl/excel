@@ -3,7 +3,7 @@ export function createStore(rootReducer, initialState = {}) {
     let listeners = []
 
     return {
-        subscribe: function(fn) {
+        subscribe(fn) {
             listeners.push(fn)
             return {
                 unsubscribe() {
@@ -13,7 +13,7 @@ export function createStore(rootReducer, initialState = {}) {
         },
         dispatch(action) {
             state = rootReducer(state, action)
-            listeners.forEach(l => l(state))
+            listeners.forEach(listener => listener(state))
         },
         getState() {
             return JSON.parse(JSON.stringify(state))

@@ -15,6 +15,7 @@ class Dom {
 
     clear() {
         this.html('')
+        return this
     }
 
     text(text) {
@@ -76,8 +77,8 @@ class Dom {
     }
 
     getStyles(styles = []) {
-        return styles.reduce((res, style) => {
-            res[style] = this.$el.style[style]
+        return styles.reduce((res, s) => {
+            res[s] = this.$el.style[s]
             return res
         }, {})
     }
@@ -87,7 +88,7 @@ class Dom {
             const parsed = this.id().split(':')
             return {
                 row: +parsed[0],
-                col: +parsed[1],
+                col: +parsed[1]
             }
         }
         return this.data.id
