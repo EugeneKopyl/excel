@@ -56,6 +56,6 @@ export function clone(obj) {
     return JSON.parse(JSON.stringify(obj))
 }
 
-export function preventDefault(e) {
-    e.preventDefault()
+export function preventDefault(event) {
+    event.preventDefault()
 }

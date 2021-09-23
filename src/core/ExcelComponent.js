@@ -45,7 +45,7 @@ export class ExcelComponent extends DomListener {
     // Инициализируем компонент
     // Добавляем DOM слушателей
     init() {
-        this.initDomListeners()
+        this.initDOMListeners()
     }
 
     // Удаляем компонент
